@@ -4,7 +4,9 @@ templates for models
 
 MODEL = """class %s(models.Model):\
     %s
-    create_date = models.DateTimeField(auto_now_add=True)
+    id = models.AutoField(primary_key=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"%s"
