@@ -6,7 +6,7 @@ VIEWSET = """class %(model)sView(BaseDetailView):
   model = %(model)s
   def generate_data_source(self, context: dict, kwargs: dict) -> DataSource:
     model: %(model)s = kwargs['object']
-    return BaseDataSource(title=model.name, subtitle=model.description, sections=[]
+    return BaseDataSource(title=model.name, subtitle=model.description, sections=[])
 
 """
 
