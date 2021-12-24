@@ -2,7 +2,7 @@
 templates for views
 """
 
-VIEWSET = """class %(model)View(BaseDetailView):
+VIEWSET = """class %(model)sView(BaseDetailView):
     queryset = %(model)s.objects.all()
     serializer_class = %(model)sSerializer
 
