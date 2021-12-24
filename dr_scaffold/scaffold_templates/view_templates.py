@@ -2,7 +2,7 @@
 templates for views
 """
 
-VIEWSET = """class %(model)sViewSet(viewsets.ModelViewSet):
+VIEWSET = """class %(model)View(BaseDetailView):
     queryset = %(model)s.objects.all()
     serializer_class = %(model)sSerializer
 
@@ -14,8 +14,7 @@ MODEL_IMPORT = """from %(app)s.models import %(model)s
 SERIALIZER_IMPORT = """from %(app)s.serializers import %(model)sSerializer
 """
 
-SETUP = """from rest_framework import mixins, permissions, viewsets
-from rest_framework.response import Response
+SETUP = """from core.builder import *
 
 """
 
