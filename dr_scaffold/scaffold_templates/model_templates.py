@@ -3,8 +3,8 @@ templates for models
 """
 
 MODEL = """class %s(models.Model):\
-    %s
     id = models.AutoField(primary_key=True)
+    %s
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
