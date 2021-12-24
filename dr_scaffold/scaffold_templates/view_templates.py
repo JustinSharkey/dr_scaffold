@@ -2,13 +2,9 @@
 templates for views
 """
 
-VIEWSET = """class %(model)View(BaseDetailView):
-    model = %(model)
-    def generate_data_source(self, context: dict, kwargs: dict) -> DataSource:
-        model: %(model) = kwargs['object']
-        return BaseDataSource(title=model.name, subtitle=model.description, sections=[
-        
-        ]
+VIEWSET = """class %(model)sViewSet(viewsets.ModelViewSet):
+    queryset = %(model)s.objects.all()
+    serializer_class = %(model)sSerializer
 
 """
 
@@ -18,7 +14,8 @@ MODEL_IMPORT = """from %(app)s.models import %(model)s
 SERIALIZER_IMPORT = """from %(app)s.serializers import %(model)sSerializer
 """
 
-SETUP = """from core.builder import *
+SETUP = """from rest_framework import mixins, permissions, viewsets
+from rest_framework.response import Response
 
 """
 
