@@ -2,11 +2,11 @@
 templates for models
 """
 
-MODEL = """class %s(models.NameDescriptionModel):\
+MODEL = """class %s(core_models.NameDescriptionModel):\
     %s
 
     def __str__(self):
-        return f"%s"
+        return self.name
         
     def url(self):
         return f''
