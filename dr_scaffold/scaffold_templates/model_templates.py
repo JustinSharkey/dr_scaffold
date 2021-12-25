@@ -6,7 +6,7 @@ MODEL = """class %s(core_models.NameDescriptionModel):\
     %s
 
     def __str__(self):
-        return self.name
+        return f"%s"
         
     def url(self):
         return f''
