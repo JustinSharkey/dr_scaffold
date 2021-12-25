@@ -5,6 +5,7 @@ templates for serializers
 SERIALIZER = """class %(model)sSerializer(serializers.ModelSerializer):
     class Meta:
         model = %(model)s
+        lookup_field = 'slug'
         fields = '__all__'
 
 """

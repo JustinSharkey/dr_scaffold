@@ -110,6 +110,6 @@ FIELD_TYPES = {
     "onetoone": ONETOONE,
 }
 
-SETUP = """from core import models
-
+SETUP = """from django.db import models
+from core import models as core_models
 """
