@@ -3,16 +3,16 @@ templates for models
 """
 
 MODEL = """class %s(models.NameDescriptionModel):\
-  %s
+    %s
 
-  def __str__(self):
-    return f"%s"
+    def __str__(self):
+        return f"%s"
         
-  def url(self):
-    return f''  
+    def url(self):
+        return f''
 
-  class Meta:
-    verbose_name_plural = "%s"
+    class Meta:
+        verbose_name_plural = "%s"
 
 """
 
@@ -110,6 +110,6 @@ FIELD_TYPES = {
     "onetoone": ONETOONE,
 }
 
-SETUP = """from django.db import models
+SETUP = """from core import models
 
 """
