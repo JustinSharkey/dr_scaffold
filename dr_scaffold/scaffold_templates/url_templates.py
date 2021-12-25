@@ -2,10 +2,10 @@
 templates for urls
 """
 
-URL = """router.register(r'%(path)s', %(model)sView)
+URL = """router.register(r'%(path)s', %(model)sViewSet)
 """
 
-VIEWSET_IMPORT = """from %(app)s.views import %(model)sView
+VIEWSET_IMPORT = """from %(app)s.views import %(model)sViewSet
 """
 
 URL_PATTERNS = """
