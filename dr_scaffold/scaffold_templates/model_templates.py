@@ -2,23 +2,21 @@
 templates for models
 """
 
-MODEL = """class %s(models.Model):\
+MODEL = """class %s(models.NameDescriptionModel):\
+  %s
 
-    id = models.AutoField(primary_key=True)
-    %s
-    
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+  def __str__(self):
+    return f"%s"
+        
+  def url(self):
+    return f''  
 
-    def __str__(self):
-        return f"%s"
-
-    class Meta:
-        verbose_name_plural = "%s"
+  class Meta:
+    verbose_name_plural = "%s"
 
 """
 
-MODEL_IMPORT = """from %(app)s.models import %(model)s
+MODEL_IMPORT = """from core import models
 """
 
 CHARFIELD = """
